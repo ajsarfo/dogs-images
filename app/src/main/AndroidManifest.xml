@@ -24,6 +24,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dogs"
         android:name=".DogApp">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6150813452529727~9157402815"/>
+
         <activity
             android:name=".view.activity.MainActivity"
             android:exported="true">

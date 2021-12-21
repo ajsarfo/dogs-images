@@ -6,8 +6,11 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import com.sarftec.dogs.R
 import com.sarftec.dogs.databinding.ActivityMainBinding
 import com.sarftec.dogs.view.adapter.BreedAdapter
+import com.sarftec.dogs.view.advertisement.AdCountManager
+import com.sarftec.dogs.view.advertisement.BannerManager
 import com.sarftec.dogs.view.parcel.MainToDetail
 import com.sarftec.dogs.view.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,16 +28,30 @@ class MainActivity : BaseActivity() {
 
     private val breedAdapter by lazy {
         BreedAdapter(lifecycleScope, viewModel) {
-            navigateToWithParcel(
-                DetailActivity::class.java,
-                parcel = MainToDetail(it.name)
-            )
+          interstitialManager?.showAd {
+              navigateToWithParcel(
+                  DetailActivity::class.java,
+                  parcel = MainToDetail(it.name)
+              )
+          }
         }
+    }
+
+    override fun canShowInterstitial(): Boolean = true
+
+    override fun createAdCounterManager(): AdCountManager {
+        return AdCountManager(listOf(1, 3, 4, 2))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutBinding.root)
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_main),
+            layoutBinding.mainBanner
+        )
+        /**********************************************************/
         setupAdapter()
         viewModel.getDogBreeds()
         viewModel.screenState.observe(this) {

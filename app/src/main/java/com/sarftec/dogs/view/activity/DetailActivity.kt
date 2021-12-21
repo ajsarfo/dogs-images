@@ -9,6 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import com.sarftec.dogs.R
 import com.sarftec.dogs.databinding.ActivityDetailBinding
 import com.sarftec.dogs.view.adapter.DogAdapter
+import com.sarftec.dogs.view.advertisement.BannerManager
+import com.sarftec.dogs.view.advertisement.RewardVideoManager
 import com.sarftec.dogs.view.dialog.LoadingDialog
 import com.sarftec.dogs.view.dialog.WallpaperDialog
 import com.sarftec.dogs.view.file.downloadGlideImage
@@ -59,9 +61,24 @@ class DetailActivity : BaseActivity() {
 
     private lateinit var toolingHandler: ToolingHandler
 
+    private val rewardVideoManager by lazy {
+        RewardVideoManager(
+            this,
+            R.string.admob_reward_video_id,
+            adRequestBuilder,
+            networkManager
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutBinding.root)
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_detail),
+            layoutBinding.mainBanner
+        )
+        /**********************************************************/
         toolingHandler = ToolingHandler(this, ReadWriteHandler(this))
         getParcelFromIntent<MainToDetail>(intent)?.let {
             viewModel.setParcel(it)
@@ -113,8 +130,10 @@ class DetailActivity : BaseActivity() {
                 toast("Action Failed!")
                 return@launch
             }
-            loadingDialog.dismiss()
-            callback(result.data!!)
+           rewardVideoManager.showRewardVideo {
+               loadingDialog.dismiss()
+               callback(result.data!!)
+           }
         }
     }
 
