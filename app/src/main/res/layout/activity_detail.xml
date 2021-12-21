@@ -87,7 +87,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/download"
-                        android:textColor="@color/color_detail_icon" />
+                        style="@style/CustomDetailIconStyle" />
                 </LinearLayout>
 
 
@@ -117,7 +117,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/share"
-                        android:textColor="@color/color_detail_icon" />
+                        style="@style/CustomDetailIconStyle" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -146,7 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/set_as"
-                        android:textColor="@color/color_detail_icon" />
+                        style="@style/CustomDetailIconStyle" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

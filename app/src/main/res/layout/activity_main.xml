@@ -15,7 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/color_primary"
-        app:navigationIcon="@drawable/ic_menu"
         app:title="@string/app_name"
         app:titleTextColor="@color/color_on_primary"
         app:titleTextAppearance="@style/CustomToolbarStyle" />
