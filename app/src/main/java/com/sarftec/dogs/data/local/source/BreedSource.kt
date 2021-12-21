@@ -55,7 +55,7 @@ class BreedSource @Inject constructor() {
         "husky",
         "setter",
         "spaniel",
-        "iwolfhound",
+        "wolfhound",
         "keeshond",
         "kelpie",
         "komondor",
