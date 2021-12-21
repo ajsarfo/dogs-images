@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="color_background">@color/black</color>
-    <color name="color_primary">#181818</color>
+    <color name="color_primary">#111111</color>
     <color name="color_on_primary">@color/white</color>
 
     <color name="color_accent">@color/color_on_primary</color>

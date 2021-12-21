@@ -3,7 +3,7 @@
     <dimen name="splash_image_width">180dp</dimen>
     <dimen name="splash_image_height">120dp</dimen>
 
-    <dimen name="progress_size">64dp</dimen>
+    <dimen name="progress_size">52dp</dimen>
 
     <dimen name="breed_card_height">160dp</dimen>
 

@@ -53,13 +53,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
                 android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.8">
+                app:layout_constraintVertical_bias="0.84000003">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -84,10 +83,10 @@
                     </LinearLayout>
 
                     <TextView
+                        style="@style/CustomDetailIconStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/download"
-                        style="@style/CustomDetailIconStyle" />
+                        android:text="@string/download" />
                 </LinearLayout>
 
 
@@ -114,10 +113,10 @@
                     </LinearLayout>
 
                     <TextView
+                        style="@style/CustomDetailIconStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/share"
-                        style="@style/CustomDetailIconStyle" />
+                        android:text="@string/share" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -143,10 +142,10 @@
                     </LinearLayout>
 
                     <TextView
+                        style="@style/CustomDetailIconStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/set_as"
-                        style="@style/CustomDetailIconStyle" />
+                        android:text="@string/set_as" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

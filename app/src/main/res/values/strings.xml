@@ -10,25 +10,27 @@
     <string name="download">Download</string>
     <string name="set_as">Set As</string>
 
+    <string name="lock_screen">Lock Screen</string>
+    <string name="home_screen">Home Screen</string>
+
     <string name="detail_toolbar_title">%s Images</string>
 
     <string name="admob_test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="admob_test_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
     <string name="admob_test_reward_video_id">ca-app-pub-3940256099942544/5224354917</string>
 
+   <!--
     <string name="admob_banner_main">@string/admob_test_banner_id</string>
     <string name="admob_banner_detail">@string/admob_test_banner_id</string>
 
     <string name="admob_interstitial_id">@string/admob_test_interstitial_id</string>
     <string name="admob_reward_video_id">@string/admob_test_reward_video_id</string>
-    <string name="lock_screen">Lock Screen</string>
-    <string name="home_screen">Home Screen</string>
+   -->
 
-    <!--
     <string name="admob_banner_main">ca-app-pub-6150813452529727/4412342593</string>
     <string name="admob_banner_detail">ca-app-pub-6150813452529727/6656853241</string>
 
     <string name="admob_interstitial_id">ca-app-pub-6150813452529727/7694602743</string>
     <string name="admob_reward_video_id">ca-app-pub-6150813452529727/6531239472</string>
-    -->
+
 </resources>
