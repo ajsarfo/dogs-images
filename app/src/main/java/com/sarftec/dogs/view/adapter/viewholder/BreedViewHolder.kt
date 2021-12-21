@@ -10,6 +10,7 @@ import com.sarftec.dogs.databinding.LayoutBreedBinding
 import com.sarftec.dogs.domain.model.Breed
 import com.sarftec.dogs.domain.model.Dog
 import com.sarftec.dogs.tools.extra.Resource
+import com.sarftec.dogs.view.file.capitalizeWords
 import com.sarftec.dogs.view.task.Task
 import com.sarftec.dogs.view.task.TaskManager
 import com.sarftec.dogs.view.viewmodel.MainViewModel
@@ -44,9 +45,11 @@ class BreedViewHolder(
     }
 
     fun bind(breed: Breed) {
-        layoutBinding.breed.text = breed.name.replaceFirstChar {
-            if (it.isLowerCase()) it.titlecase(Locale.ENGLISH) else it.toString()
-        }
+        layoutBinding.breed.text = breed.name
+            .substringBefore("/")
+            .trim()
+            .capitalizeWords()
+
         clearLayout(breed)
         val task = Task.createTask<Breed, Resource<Dog>>(
             dependency.coroutineScope,

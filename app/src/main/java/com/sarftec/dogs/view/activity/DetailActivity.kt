@@ -14,6 +14,7 @@ import com.sarftec.dogs.view.advertisement.RewardVideoManager
 import com.sarftec.dogs.view.dialog.LoadingDialog
 import com.sarftec.dogs.view.dialog.WallpaperDialog
 import com.sarftec.dogs.view.file.downloadGlideImage
+import com.sarftec.dogs.view.file.parseName
 import com.sarftec.dogs.view.file.toast
 import com.sarftec.dogs.view.handler.ReadWriteHandler
 import com.sarftec.dogs.view.handler.ToolingHandler
@@ -109,12 +110,7 @@ class DetailActivity : BaseActivity() {
 
     private fun setupToolbar() {
         layoutBinding.materialToolbar.setNavigationOnClickListener { onBackPressed() }
-        val name = viewModel.getBreed()?.name?.let { name ->
-            name.replaceFirstChar {
-                if (it.isLowerCase()) it.titlecase(Locale.ENGLISH) else it.toString()
-            }
-        }
-        layoutBinding.materialToolbar.title = name?.let {
+        layoutBinding.materialToolbar.title = viewModel.getBreed()?.parseName()?.let {
             getString(R.string.detail_toolbar_title, it)
         }
     }
@@ -125,15 +121,15 @@ class DetailActivity : BaseActivity() {
             val result = viewModel.getAtPosition(layoutBinding.viewPager.currentItem)?.let {
                 this@DetailActivity.downloadGlideImage(it.image)
             }
-            if(result == null || result.isError()) {
+            if (result == null || result.isError()) {
                 loadingDialog.dismiss()
                 toast("Action Failed!")
                 return@launch
             }
-           rewardVideoManager.showRewardVideo {
-               loadingDialog.dismiss()
-               callback(result.data!!)
-           }
+            rewardVideoManager.showRewardVideo {
+                loadingDialog.dismiss()
+                callback(result.data!!)
+            }
         }
     }
 
