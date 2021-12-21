@@ -11,6 +11,7 @@ import com.sarftec.dogs.databinding.ActivityMainBinding
 import com.sarftec.dogs.view.adapter.BreedAdapter
 import com.sarftec.dogs.view.advertisement.AdCountManager
 import com.sarftec.dogs.view.advertisement.BannerManager
+import com.sarftec.dogs.view.manager.AppReviewManager
 import com.sarftec.dogs.view.parcel.MainToDetail
 import com.sarftec.dogs.view.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -59,6 +60,9 @@ class MainActivity : BaseActivity() {
         }
         layoutBinding.networkError.reload.setOnClickListener {
             viewModel.getDogBreeds()
+        }
+        lifecycleScope.launchWhenCreated {
+            AppReviewManager(this@MainActivity).init().triggerReview()
         }
     }
 

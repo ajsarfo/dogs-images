@@ -61,7 +61,7 @@ abstract class BaseActivity : AppCompatActivity() {
         klass: Class<T>,
         finish: Boolean = false,
         slideIn: Int = R.anim.slide_in_right,
-        slideOut: Int = R.anim.slide_out_left,
+        slideOut: Int = R.anim.no_anim, //slideOut: Int = R.anim.slide_out_left,
         parcel: Parcelable? = null
     ) {
         val intent = Intent(this, klass).also {
@@ -78,7 +78,8 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        overridePendingTransition(R.anim.no_anim, R.anim.slide_out_right)
+       //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 
     companion object {

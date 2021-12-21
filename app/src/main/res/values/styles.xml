@@ -9,4 +9,9 @@
         <item name="android:textColor">@color/color_on_primary</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="CustomRoundShapeOverlay">
+        <item name="cornerSize">0%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
 </resources>

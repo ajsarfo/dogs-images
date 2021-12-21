@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="splash_image_width">180dp</dimen>
+    <dimen name="splash_image_height">120</dimen>
+
     <dimen name="progress_size">64dp</dimen>
 
     <dimen name="breed_card_height">160dp</dimen>
