@@ -145,7 +145,7 @@ class DetailActivity : BaseActivity() {
             runCurrentBitmapCallback { toolingHandler.saveImage(it) }
         }
         layoutBinding.wallpaper.setOnClickListener {
-            runCurrentBitmapCallback { wallpaperDialog.show() }
+            wallpaperDialog.show()
         }
     }
 

@@ -21,6 +21,8 @@
 
     <string name="admob_interstitial_id">@string/admob_test_interstitial_id</string>
     <string name="admob_reward_video_id">@string/admob_test_reward_video_id</string>
+    <string name="lock_screen">Lock Screen</string>
+    <string name="home_screen">Home Screen</string>
 
     <!--
     <string name="admob_banner_main">ca-app-pub-6150813452529727/4412342593</string>

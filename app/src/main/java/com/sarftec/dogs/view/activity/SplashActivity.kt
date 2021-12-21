@@ -29,7 +29,7 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun setSplashImage() {
-        val imageName = "splash_icon.png"
+        val imageName = "splash_icon.jpg"
         assets.open(imageName).use {
             layoutBinding.splashImageView.setImageBitmap(
                 BitmapFactory.decodeStream(it)

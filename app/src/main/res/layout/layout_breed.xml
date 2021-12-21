@@ -33,7 +33,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_image_placeholder"
-                app:tint="@color/color_on_primary" />
+                app:tint="@color/color_image_placeholder" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image"
@@ -44,6 +44,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="gone"
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <LinearLayout
