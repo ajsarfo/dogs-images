@@ -26,25 +26,29 @@ class ToolingHandler(
 
     @SuppressLint("MissingPermission")
     fun setWallpaper(image: Bitmap, option: WallpaperOption) {
-        val manager = WallpaperManager.getInstance(context)
-        when (option) {
-            WallpaperOption.HOME -> {
-                manager.setBitmap(image)
-                context.toast("Home screen set!")
-            }
-            WallpaperOption.LOCK -> {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    manager.setBitmap(
-                        image,
-                        null,
-                        true,
-                        WallpaperManager.FLAG_LOCK
-                    )
-                    context.toast("Lock screen set!")
-                } else {
-                    context.toast("Device does not have support!")
+        try {
+            val manager = WallpaperManager.getInstance(context)
+            when (option) {
+                WallpaperOption.HOME -> {
+                    manager.setBitmap(image)
+                    context.toast("Home screen set!")
+                }
+                WallpaperOption.LOCK -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        manager.setBitmap(
+                            image,
+                            null,
+                            true,
+                            WallpaperManager.FLAG_LOCK
+                        )
+                        context.toast("Lock screen set!")
+                    } else {
+                        context.toast("Device does not have support!")
+                    }
                 }
             }
+        } catch(e: Exception) {
+            context.toast("Device does not have support!")
         }
     }
 
